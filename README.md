@@ -1,6 +1,6 @@
 # magyarch-i3
 
-
+I3 documentation : https://i3wm.org/
 
 i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers. Based upon the experiences we made when wanting to hack/fix wmii, we agreed upon the following goals for i3:
 
