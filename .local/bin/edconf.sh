@@ -7,15 +7,11 @@
 
 declare options=("alias
 bash
-bspwm
+i3config
 profile
 vifm
-xinitrc
-polybar
-st
-sxhkd
-vim
-xprofile
+i3blocks
+xresources
 quit")
 
 choice=$(echo -e "${options[@]}" | rofi -dmenu -i -no-custom -p 'Edit a config file: ')
@@ -30,8 +26,8 @@ case "$choice" in
 	bash)
 		choice="$HOME/.bashrc"
 	;;
-	bspwm)
-		choice="$HOME/.config/bspwm/bspwmrc"
+	i3config)
+		choice="$HOME/.config/i3/config"
 	;;
 	profile)
 		choice="$HOME/.profile"
@@ -39,23 +35,11 @@ case "$choice" in
 	vifm)
 		choice="$HOME/.config/vifm/vifmrc"
 	;;
-	xinitrc)
-		choice="$HOME/.xinitrc"
+	i3blocks)
+		choice="$HOME/.config/i3blocks/config"
 	;;
-	polybar)
-		choice="$HOME/.config/polybar/config"
-	;;
-	st)
-		choice="$HOME/st/config.h"
-	;;
-	sxhkd)
-		choice="$HOME/.config/sxhkd/sxhkdrc"
-	;;
-	vim)
-		choice="$HOME/.vimrc"
-	;;
-	xprofile)
-		choice="$HOME/.xprofile"
+	xresources)
+		choice="$HOME/.Xresources"
 	;;
 	*)
 		exit 1

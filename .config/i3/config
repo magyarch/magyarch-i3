@@ -5,6 +5,7 @@ gaps inner 10
 gaps outer 5
 for_window [class="^.*"] border pixel 3
 set $mod Mod4
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -15,7 +16,7 @@ font pango:monospace 10
 
 
 # autostart
-exec --no-startup-id xrandr --output HDMI1 --primary --mode 1920x1080 --output LVDS1 --off
+#exec --no-startup-id xrandr --output HDMI1 --primary --mode 1920x1080 --output LVDS1 --off
 exec --no-startup-id xsetroot -cursor_name left_ptr 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -31,10 +32,10 @@ exec --no-startup-id nm-applet
 bindsym $mod+Return exec $TERMINAL
 
 # tui filemanager
-bindsym $mod+Shift+Return exec $TERMINAL -e vifm
+bindsym $mod+Shift+Return exec $TERMINAL -e $FILE
 
 # gui filemanager 
-bindsym $mod+a exec $TERMINAL -e $FILE
+bindsym $mod+a exec pcmanfm
 
 # discord
 bindsym $mod+Shift+a exec $TERMINAL -n $FILE -c $FILE -e sudo $FILE
@@ -48,7 +49,7 @@ bindsym $mod+Shift+b exec subl3
 # web browser 
 bindsym $mod+w exec $BROWSER
 
-# nmtui
+# discord
 bindsym $mod+Shift+w  exec discord
 
 # start dmenu (a program launcher)
@@ -60,19 +61,14 @@ bindsym $mod+Shift+d exec rofi_run -r
 # kill focused window
 bindsym $mod+q kill
 
-# exit i3
-bindsym $mod+Escape exec --no-startup-id prompt "Exit i3?" "i3 exit"
+# restart,exit,shutdown i3
+bindsym $mod+x exec --no-startup-id power
 
-# restart
-bindsym $mod+x exec --no-startup-id prompt "Reboot computer?" "sudo -A reboot"
-
-# shutdown
-bindsym $mod+Shift+x exec --no-startup-id prompt "Shutdown computer" "sudo -A shutdown -h now"
 
 # function 
-bindsym $mod+F1         exec --no-startup-id zathura $HOME/.local/share/Magyarchlinux_welcome.pdf
+#bindsym $mod+F1         exec --no-startup-id zathura $HOME/.local/share/Magyarchlinux_welcome.pdf
 bindsym $mod+F2         exec edconf.sh
-bindsym $mod+F3         exec power
+#bindsym $mod+F3         exec power
 bindsym $mod+F4         exec $TERMINAL -e nmtui
 bindsym $mod+F7         exec --no-startup-id scrot 'MagyArch-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
 bindsym $mod+F8         exec pavucontrol 
