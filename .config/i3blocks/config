@@ -1,0 +1,69 @@
+# For the benefit of emacs users: -*- shell-script -*-
+#
+#  _ _____ _     _            _
+# (_)___ /| |__ | | ___   ___| | _____
+# | | |_ \| '_ \| |/ _ \ / __| |/ / __|
+# | |___) | |_) | | (_) | (__|   <\__ \
+# |_|____/|_.__/|_|\___/ \___|_|\_\___/
+
+command=~/.local/bin/statusbar/$BLOCK_NAME
+align=center
+separator=false
+color=#ffffff
+separator_block_width=15
+markup=pango
+
+[mediaplayer]
+command=playerctl metadata --format "{{ artist }} - {{ title }}"
+interval=2
+label=<span color="#a9e185"> </span>
+
+[arch-update]
+command=checkupdates | wc -l
+interval=once
+label=<span color="#1793D1">📦 </span>
+
+[weather]
+interval=18000
+signal=5
+
+[battery]
+interval=2
+color=#ff79c6
+
+[home]
+command=df -h /home | awk 'FNR==2{print $4}'
+interval=3
+label=<span color="#a9e185"> </span>
+
+[root]
+command=df -h / | awk 'FNR==2{print $4}'
+interval=3
+label=<span color="#ff79c6"> </span>
+
+[cpu_temp]
+command=~/.local/bin/statusbar/cpu
+interval=2
+label=<span color="#8be9fd"> </span>
+
+[memory]
+command=free -h --si | awk 'FNR==2{ print $0 }' | awk '{ print $7 }'
+interval=2
+label=<span color="#a9e185"> </span>
+
+[volume]
+command=~/.local/bin/statusbar/volume
+interval=2
+label=<span color="#ff79c6"></span>
+
+[time]
+command=date '+%H:%M'
+interval=1
+label=<span color="#ffb86c"> </span>
+
+[date]
+command=date '+%A %e'
+interval=60
+label=<span color="#8be9fd">📅 </span>
+
+
