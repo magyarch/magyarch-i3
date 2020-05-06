@@ -32,13 +32,13 @@ exec --no-startup-id nm-applet
 bindsym $mod+Return exec --no-startup-id $TERMINAL
 
 # tui filemanager
-bindsym $mod+Shift+Return exec --no-startup-id $TERMINAL -e $FILE
+bindsym $mod+Shift+Return exec --no-startup-id urxvt -e vifm
 
 # gui filemanager 
-bindsym $mod+a exec --no-startup-idpcmanfm
+bindsym $mod+a exec --no-startup-id pcmanfm
 
 # discord
-bindsym $mod+Shift+a exec --no-startup-id $TERMINAL -n $FILE -c $FILE -e sudo $FILE
+bindsym $mod+Shift+a exec --no-startup-id sudo pcmanfm
 
 # tui editor
 bindsym $mod+b exec --no-startup-id $TERMINAL -e $EDITOR
