@@ -29,34 +29,34 @@ exec --no-startup-id nm-applet
 
 
 # start a terminal
-bindsym $mod+Return exec $TERMINAL
+bindsym $mod+Return exec --no-startup-id $TERMINAL
 
 # tui filemanager
-bindsym $mod+Shift+Return exec $TERMINAL -e $FILE
+bindsym $mod+Shift+Return exec --no-startup-id $TERMINAL -e $FILE
 
 # gui filemanager 
-bindsym $mod+a exec pcmanfm
+bindsym $mod+a exec --no-startup-idpcmanfm
 
 # discord
-bindsym $mod+Shift+a exec $TERMINAL -n $FILE -c $FILE -e sudo $FILE
+bindsym $mod+Shift+a exec --no-startup-id $TERMINAL -n $FILE -c $FILE -e sudo $FILE
 
 # tui editor
-bindsym $mod+b exec $TERMINAL -e $EDITOR
+bindsym $mod+b exec --no-startup-id $TERMINAL -e $EDITOR
 
 # gui editor
-bindsym $mod+Shift+b exec subl3
+bindsym $mod+Shift+b exec --no-startup-id subl3
 
 # web browser 
-bindsym $mod+w exec $BROWSER
+bindsym $mod+w exec --no-startup-id $BROWSER
 
 # discord
-bindsym $mod+Shift+w  exec discord
+bindsym $mod+Shift+w exec --no-startup-id discord
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "dmenu_run -nf '#C3CDC8' -nb '#2F2B26' -sb '#2E8B57' -sf '#EEEEEE' -fn 'monospace-10' -p 'dmenu prompt'"
+bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#C3CDC8' -nb '#2F2B26' -sb '#2E8B57' -sf '#EEEEEE' -fn 'monospace-10' -p 'dmenu prompt'"
 
 # scrot(screenshot)
-bindsym $mod+Shift+d exec rofi_run -r
+bindsym $mod+Shift+d exec --no-startup-id rofi_run -r
 
 # kill focused window
 bindsym $mod+q kill
@@ -67,11 +67,11 @@ bindsym $mod+x exec --no-startup-id power
 
 # function 
 #bindsym $mod+F1         exec --no-startup-id zathura $HOME/.local/share/Magyarchlinux_welcome.pdf
-bindsym $mod+F2         exec edconf.sh
+bindsym $mod+F2         exec --no-startup-id edconf.sh
 #bindsym $mod+F3         exec power
-bindsym $mod+F4         exec $TERMINAL -e nmtui
+bindsym $mod+F4         exec --no-startup-id $TERMINAL -e nmtui
 bindsym $mod+F7         exec --no-startup-id scrot 'MagyArch-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
-bindsym $mod+F8         exec pavucontrol 
+bindsym $mod+F8         exec --no-startup-id pavucontrol 
 bindsym $mod+F9         exec --no-startup-id dmenumount
 bindsym $mod+F10        exec --no-startup-id amixer set Master 5%-
 bindsym $mod+F11        exec --no-startup-id amixer set Master 5%+
