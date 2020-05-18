@@ -13,33 +13,27 @@ color=#ffffff
 separator_block_width=15
 markup=pango
 
-[mediaplayer]
-command=playerctl metadata --format "{{ artist }} - {{ title }}"
-interval=2
-label=<span color="#a9e185"> </span>
 
-[arch-update]
-command=checkupdates | wc -l
-interval=once
-label=<span color="#1793D1">📦 </span>
 
 [weather]
+command=weather
 interval=18000
 signal=5
 
 [battery]
-interval=2
-color=#ff79c6
+command=$HOME/.local/bin/statusbar/battery
+interval=5
+#color=#ff79c6
 
-[home]
-command=df -h /home | awk 'FNR==2{print $4}'
-interval=3
-label=<span color="#a9e185"> </span>
+#[home]
+#command=df -h /home | awk 'FNR==2{print $4}'
+#interval=3
+#label=<span color="#2e8b57"> </span>
 
 [root]
 command=df -h / | awk 'FNR==2{print $4}'
 interval=3
-label=<span color="#ff79c6"> </span>
+label=<span color="#C63737"> </span>
 
 [cpu_temp]
 command=~/.local/bin/statusbar/cpu
@@ -47,14 +41,15 @@ interval=2
 label=<span color="#8be9fd"> </span>
 
 [memory]
-command=free -h --si | awk 'FNR==2{ print $0 }' | awk '{ print $7 }'
+#command=free -h --si | awk 'FNR==2{ print $0 }' | awk '{ print $7 }'
+command=memory
 interval=2
-label=<span color="#a9e185"> </span>
+label=<span>🧠 </span>
 
 [volume]
-command=~/.local/bin/statusbar/volume
-interval=2
-label=<span color="#ff79c6"></span>
+command=volume
+interval=1
+#label=<span color="#ff79c6"></span>
 
 [time]
 command=date '+%H:%M'
