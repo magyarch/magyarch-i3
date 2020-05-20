@@ -25,7 +25,7 @@ font pango:monospace 10
 exec --no-startup-id xrandr --output HDMI1 --primary --mode 1920x1080 --output LVDS1 --off &
 exec --no-startup-id xsetroot -cursor_name left_ptr 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always --no-startup-id zathura ~/.local/bin/Magyarch-i3.pdf &
 exec --no-startup-id xrdb .Xresources
 exec --no-startup-id picom --config ~/.config/picom.conf &	
 exec --no-startup-id dunst &  
@@ -77,7 +77,7 @@ bindsym $mod+c exec --no-startup-id power
 
 # Function keys ############################################################################
 
-#bindsym $mod+F1         exec --no-startup-id zathura $HOME/.local/share/Magyarchlinux_welcome.pdf
+bindsym $mod+F1         exec --no-startup-id zathura ~/.local/bin/Magyarch-i3.pdf &
 bindsym $mod+F2         exec --no-startup-id edconf.sh
 bindsym $mod+F3         exec --no-startup-id pcmanfm
 bindsym $mod+F4         exec --no-startup-id "urxvt --title floating -e nmtui"
