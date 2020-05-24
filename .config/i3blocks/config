@@ -20,9 +20,9 @@ command=weather
 interval=18000
 signal=5
 
-[battery]
-command=$HOME/.local/bin/statusbar/battery
-interval=5
+#[battery]
+#command=$HOME/.local/bin/statusbar/battery
+#interval=5
 #color=#ff79c6
 
 #[home]
