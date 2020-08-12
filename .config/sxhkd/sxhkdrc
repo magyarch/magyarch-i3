@@ -1,0 +1,132 @@
+# MagyArch Linux i3wm keybinds #
+#########################################
+
+# Terminal emulator
+super + {_,shift + } Return
+     {alacritty, alacritty --title floating}
+
+# Dmenu2 and rofi(window switcher, application launcher)
+super + {_,shift +} d
+    {dmenu_run -nb '#c3cdc8' -nf '#000000' -sb '#2e8b57' -fn 'JetBrains Mono Medium-11' -p 'Search', rofi_run -r}
+
+# Chat client, gui filemanager
+super + {_,shift + } p
+    {discord, pcmanfm}
+
+# Default web browser firfox,and brave
+super + {_,shift + } w
+    {$BROWSER, firefox}
+
+# open gui text editor sublime
+super + shift + e
+    subl3
+
+# Htop,gtop system monitor
+super + {_,shift + } i
+    {$TERMINAL -e htop, $TERMINAL -e gtop} 
+
+# Reload sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# Record and stream 
+super + {KP_Home,KP_End}
+    {dmenurecord, live.sh}
+    
+# Kill recording and stream
+super + shift + x 
+    killall ffmpeg
+
+# On/off transparency, pavucontrol
+alt + {a,b}
+   {pavucontrol,toggleprogram "picom -b"}
+    
+
+# Function keys #
+########################################
+
+# MagyArch help doc
+super + F1
+    zathura $HOME/.local/bin/Magyarch-i3.pdf
+
+# Easy edit configuration files 
+super + F2
+    edconf.sh
+
+# Filemanager
+super + F3
+    displayselect
+
+# Take screenshot
+super + F4
+    maim pic-full-$(date '+%y%m%d-%H%M-%S').png
+    
+# Pick screenshot type
+super + F5
+    maimpick
+
+# Search with Duckduckgo
+super + F6
+    ducksearch
+
+# Mpv floating
+super + F7
+    mpv --geometry=40%+30+30 --title="mpvfloat" https://www.youtube.com/watch?v=8UU-FYBWgPg&list=PLIxoUSHenBEWmlvIhmItUdHmCnsmNlO2P
+
+# Wallpaper chenger
+super + F8
+    wal
+
+# Mount and umount a USB drive or Android device
+super + {F9,F10}
+    {dmenumount,dmenuumount}
+    
+# Decrease volume -5
+F10
+    amixer set Master 5%-
+
+# Increase volume +5
+F11
+    amixer set Master 5%+
+
+# Mute volume
+F12
+   amixer set Master toggle
+
+
+# Close windows
+super + q
+    i3-msg kill
+
+# Quit,reboot,shutdown menu/i3; reload config
+super + {_,shift + } c
+     {power, i3-msg reload}
+
+# i3; restart i3 in-place (preserves layout/session)  
+super + {_,shift + } r
+     {alacritty -e vifm, i3-msg restart}
+
+# Change focus between tiling and floating and toggle floating windows
+super + {_,shift + } space
+     {i3-msg focus mode_toggle, i3-msg floating toggle}
+
+# Change container layout (stacked, tabbed, toggle split)
+super + {s,t,e}
+     i3-msg layout {stacked, tabbed, toggle split}
+
+# Split in horizontal/vertical orientation
+super + {b,v}
+    i3-msg split {h,v}
+
+# Enter fullscreen mode for the focused container
+super + f
+    i3-msg fullscreen
+
+# Change focus / move focused window
+super + {_,shift +}{h,j,k,l}
+  i3-msg {focus,move} {left,down,up,right}
+
+super + {_,shift +}{Left,Down,Up,Right}
+  i3-msg {focus,move} {left,down,up,right}
+    
+

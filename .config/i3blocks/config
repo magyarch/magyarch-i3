@@ -8,8 +8,8 @@
 
 command=~/.local/bin/statusbar/$BLOCK_NAME
 align=center
-separator=false
-color=#ffffff
+separator=true
+color=#c3cdc8
 separator_block_width=15
 markup=pango
 
@@ -21,44 +21,39 @@ interval=18000
 signal=5
 
 #[battery]
-#command=$HOME/.local/bin/statusbar/battery
+#command=battery
 #interval=5
-#color=#ff79c6
 
-#[home]
-#command=df -h /home | awk 'FNR==2{print $4}'
-#interval=3
-#label=<span color="#2e8b57"> </span>
 
-[root]
-command=df -h / | awk 'FNR==2{print $4}'
+[home]
+command=df -h /home | awk 'FNR==2{print $4}'
 interval=3
-label=<span color="#C63737"> </span>
+label=<span color="#2e8b57"> </span>
 
 [cpu_temp]
-command=~/.local/bin/statusbar/cpu
+command=cpu
 interval=2
-label=<span color="#8be9fd"> </span>
+label= 
 
 [memory]
-#command=free -h --si | awk 'FNR==2{ print $0 }' | awk '{ print $7 }'
 command=memory
 interval=2
-label=<span>🧠 </span>
+label=🧠
+
 
 [volume]
 command=volume
 interval=1
-#label=<span color="#ff79c6"></span>
+#signal=10
 
-[time]
-command=date '+%H:%M'
-interval=1
-label=<span color="#ffb86c"> </span>
 
-[date]
-command=date '+%A %e'
-interval=60
-label=<span color="#8be9fd">📅 </span>
+[clock]
+label=📅
+interval=30
+
+[record]
+command=cat /tmp/recordingicon
+interval=once
+signal=9
 
 
