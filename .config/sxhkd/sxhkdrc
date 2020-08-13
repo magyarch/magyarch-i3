@@ -23,7 +23,7 @@ super + shift + e
 
 # Htop,gtop system monitor
 super + {_,shift + } i
-    {$TERMINAL -e htop, $TERMINAL -e gtop} 
+    {i3keys.sh, $TERMINAL -e htop} 
 
 # Reload sxhkd
 super + Escape
