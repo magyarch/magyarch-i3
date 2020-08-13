@@ -104,7 +104,7 @@ super + {_,shift + } c
 
 # i3; restart i3 in-place (preserves layout/session)  
 super + {_,shift + } r
-     {alacritty -e vifm, i3-msg restart}
+     {alacritty --title floating -e vifm, i3-msg restart}
 
 # Change focus between tiling and floating and toggle floating windows
 super + {_,shift + } space
@@ -129,4 +129,12 @@ super + {_,shift +}{h,j,k,l}
 super + {_,shift +}{Left,Down,Up,Right}
   i3-msg {focus,move} {left,down,up,right}
     
+
+ # Gaps increase
+super + KP_Add  
+  i3-msg gaps outer current minus 5
+
+# Gaps decrease
+super + KP_Subtract
+  i3-msg gaps outer current plus 5  
 
