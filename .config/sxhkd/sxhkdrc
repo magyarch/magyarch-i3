@@ -21,7 +21,7 @@ super + {_,shift + } w
 super + shift + e
     subl3
 
-# Htop,gtop system monitor
+# Show keybind in rofi,htop system monitor
 super + {_,shift + } i
     {i3keys.sh, $TERMINAL -e htop} 
 
