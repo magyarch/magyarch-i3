@@ -53,7 +53,7 @@ super + F1
 super + F2
     edconf.sh
 
-# Filemanager
+# Select display
 super + F3
     displayselect
 
