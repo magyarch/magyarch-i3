@@ -104,23 +104,23 @@ super + {_,shift + } c
 
 # i3; restart i3 in-place (preserves layout/session)  
 super + {_,shift + } r
-     {alacritty --title floating -e vifm, i3-msg restart}
+     {$TERMINAL -e vifm, i3-msg restart}
 
 # Change focus between tiling and floating and toggle floating windows
 super + {_,shift + } space
      {i3-msg focus mode_toggle, i3-msg floating toggle}
 
-# Change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, fullscreen toggle split)
 super + {s,t,e}
      i3-msg layout {stacked, tabbed, toggle split}
+
+# Fullscreen toggle
+super + f
+     i3-msg fullscreen
 
 # Split in horizontal/vertical orientation
 super + {b,v}
     i3-msg split {h,v}
-
-# Enter fullscreen mode for the focused container
-super + f
-    i3-msg fullscreen
 
 # Change focus / move focused window
 super + {_,shift +}{h,j,k,l}
@@ -131,10 +131,10 @@ super + {_,shift +}{Left,Down,Up,Right}
     
 
  # Gaps increase
-super + KP_Add  
-  i3-msg gaps outer current minus 5
+super + a  
+  i3-msg gaps outer current plus 5
 
 # Gaps decrease
-super + KP_Subtract
-  i3-msg gaps outer current plus 5  
+super + shift + a
+  i3-msg gaps outer current minus 5  
 
