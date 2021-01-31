@@ -25,4 +25,4 @@ nm-applet &        # networkmanager applet/wifi,ethernet settings
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-zathura ~/.local/bin/Magyarch-i3.pdf &
+zathura ~/.local/share/Magyarch-i3.pdf &

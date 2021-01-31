@@ -59,8 +59,8 @@ super + F3
 
 # Take screenshot
 super + F4
-    maim pic-full-$(date '+%y%m%d-%H%M-%S').png
-    
+    maim ~/Képek/Képernyőképek/`date +%Y-%m-%d_%H:%M:%S`.png
+
 # Pick screenshot type
 super + F5
     maimpick

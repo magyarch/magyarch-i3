@@ -27,6 +27,16 @@ mpd >/dev/null 2>&1 &
 echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 
 
+# Screenshot export.
+if [[ "$LANG" = "hu_HU.UTF-8" ]]
+then
+    export SCREENSHOTS="$(xdg-user-dir PICTURES)/Képernyőképek"
+    [ ! -d $SCREENSHOTS ] && mkdir -p $SCREENSHOTS >/dev/null 2>&1
+
+else
+    export SCREENSHOTS="$(xdg-user-dir PICTURES)/screenshots"
+    [ ! -d $SCREENSHOTS ] && mkdir -p $SCREENSHOTS >/dev/null 2>&1
+fi
 
 
 
