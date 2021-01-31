@@ -47,7 +47,7 @@ alt + {a,b}
 
 # MagyArch help doc
 super + F1
-    zathura $HOME/.local/bin/Magyarch-i3.pdf
+    zathura $HOME/.local/share/Magyarch-i3.pdf
 
 # Easy edit configuration files 
 super + F2
