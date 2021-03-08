@@ -7,7 +7,7 @@ super + {_,shift + } Return
 
 # Dmenu2 and rofi(window switcher, application launcher)
 super + {_,shift +} d
-    {dmenu_run -nb '#c3cdc8' -nf '#000000' -sb '#2e8b57' -fn 'JetBrains Mono Medium-11' -p 'Search', rofi_run -r}
+    {dmenu_run -nb '#2f2b26' -nf '#c3cdc8' -sb '#2e8b57' -fn 'JetBrains Mono Nerd Font-12' -p 'Search', rofi_run -r}
 
 # Chat client, gui filemanager
 super + {_,shift + } p
@@ -15,7 +15,7 @@ super + {_,shift + } p
 
 # Default web browser firfox,and brave
 super + {_,shift + } w
-    {$BROWSER, firefox}
+    {$BROWSER, rofi_run -w}
 
 # open gui text editor sublime
 super + shift + e
@@ -91,8 +91,7 @@ F11
 
 # Mute volume
 F12
-   amixer set Master toggle
-
+   layout_manager.sh
 
 # Close windows
 super + q
@@ -100,7 +99,7 @@ super + q
 
 # Quit,reboot,shutdown menu/i3; reload config
 super + {_,shift + } c
-     {power, i3-msg reload}
+     {rofi_run -l, i3-msg reload}
 
 # i3; restart i3 in-place (preserves layout/session)  
 super + {_,shift + } r
