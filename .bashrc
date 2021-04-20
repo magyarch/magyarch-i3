@@ -1,12 +1,20 @@
 #!/bin/bash
 
+# Disable ctrl-s and ctrl-q
+stty -ixon
 
-stty -ixon # Disable ctrl-s and ctrl-q.
-shopt -s autocd #Allows you to cd into directory merely by typing the directory name.
-HISTSIZE= HISTFILESIZE= # Infinite history.
+#Allows you to cd into directory merely by typing the directory name.
+shopt -s autocd 
 
-#export PS1="[\u@\h\w ]$ "
-export PS1="\t  -- \[$(tput setab 2)$(tput smul)$(tput setaf 7)\][How are you today $USER?]\[$(tput sgr0)\] -> \W # ";
+# Infinite history.
+HISTSIZE= HISTFILESIZE=
+
+
+# prompt customization
+#export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 1)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 7)\]\h \[$(tput setaf 2)\]\t\W\[$(tput setaf 2)\]]\[$(tput setaf 2)\]\\$ \[$(tput sgr0)\]"
+#export PS1="\u@\h [\$(date +%H:%M:%S)] ~ "
+export PS1="\[$(tput setaf 1)\]\t\[$(tput sgr0)\] -- \[$(tput setaf 7)$(tput smul)\][How are you today $USER?]\[$(tput rmul)\] -> \[$(tput setaf 2)\]\W # \[$(tput sgr0)\]";
+#export PS1="\[$(tput bold)$(tput setb)$(tput setaf 7)\]\u@\h: \w $ \[$(tput sgr0)\]";
 
 
 # Load shortcut aliases
@@ -14,4 +22,3 @@ export PS1="\t  -- \[$(tput setab 2)$(tput smul)$(tput setaf 7)\][How are you to
 
 # Load aliases
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
-
