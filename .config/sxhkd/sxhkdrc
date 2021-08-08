@@ -19,7 +19,7 @@ super + {_,shift + } w
 
 # open gui text editor sublime
 super + shift + e
-    subl3
+    subl
 
 # Show keybind in rofi,htop system monitor
 super + {_,shift + } i
