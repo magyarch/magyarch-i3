@@ -23,7 +23,7 @@ super + shift + e
 
 # Show keybind in rofi,htop system monitor
 super + {_,shift + } i
-    {i3keys.sh, $TERMINAL -e htop} 
+    {column-layout, promote-i3 &}
 
 # Reload sxhkd
 super + Escape
@@ -103,7 +103,7 @@ super + {_,shift + } c
 
 # i3; restart i3 in-place (preserves layout/session)  
 super + {_,shift + } r
-     {$TERMINAL -e vifm, i3-msg restart}
+     {$TERMINAL -e $FILE, i3-msg restart}
 
 # Change focus between tiling and floating and toggle floating windows
 super + {_,shift + } space
@@ -136,4 +136,7 @@ super + a
 # Gaps decrease
 super + shift + a
   i3-msg gaps outer current minus 5  
+
+super + shift + b
+  i3-tabbed &
 
