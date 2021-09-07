@@ -7,7 +7,7 @@ super + {_,shift + } Return
 
 # Dmenu2 and rofi(window switcher, application launcher)
 super + {_,shift +} d
-    {dmenu_run -nb '#2f2b26' -nf '#c3cdc8' -sb '#2e8b57' -fn 'JetBrains Mono Nerd Font-12' -p 'Search', rofi_run -r}
+    {dmenu_run -nb '#1a1a1a' -nf '#c3cdc8' -sb '#2e8b57' -fn 'JetBrains Mono Nerd Font-12' -p 'Search', rofi_run -r}
 
 # Chat client, gui filemanager
 super + {_,shift + } p
@@ -29,18 +29,18 @@ super + {_,shift + } i
 super + Escape
     pkill -USR1 -x sxhkd
 
-# Record and stream 
+# Record and stream
 super + {KP_Home,KP_End}
     {dmenurecord, live.sh}
-    
+
 # Kill recording and stream
-super + shift + x 
+super + shift + x
     killall ffmpeg
 
 # On/off transparency, pavucontrol
 alt + {a,b}
    {pavucontrol,toggleprogram "picom -b"}
-    
+
 
 # Function keys #
 ########################################
@@ -49,7 +49,7 @@ alt + {a,b}
 super + F1
     zathura $HOME/.local/share/Magyarch-i3.pdf
 
-# Easy edit configuration files 
+# Easy edit configuration files
 super + F2
     edconf.sh
 
@@ -80,7 +80,7 @@ super + F8
 # Mount and umount a USB drive or Android device
 super + {F9,F10}
     {dmenumount,dmenuumount}
-    
+
 # Decrease volume -5
 F10
     amixer set Master 5%-
@@ -101,7 +101,7 @@ super + q
 super + {_,shift + } c
      {rofi_run -l, i3-msg reload}
 
-# i3; restart i3 in-place (preserves layout/session)  
+# i3; restart i3 in-place (preserves layout/session)
 super + {_,shift + } r
      {$TERMINAL -e $FILE, i3-msg restart}
 
@@ -127,15 +127,15 @@ super + {_,shift +}{h,j,k,l}
 
 super + {_,shift +}{Left,Down,Up,Right}
   i3-msg {focus,move} {left,down,up,right}
-    
+
 
  # Gaps increase
-super + a  
+super + a
   i3-msg gaps outer current plus 5
 
 # Gaps decrease
 super + shift + a
-  i3-msg gaps outer current minus 5  
+  i3-msg gaps outer current minus 5
 
 super + shift + b
   i3-tabbed &
