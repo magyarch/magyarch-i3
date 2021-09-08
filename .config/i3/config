@@ -154,7 +154,7 @@ bar {
      
 
   colors {
-    background #2f2b26
+    background #1a1a1a
     statusline #C3CDC8
     separator  #C3CDC8
     
