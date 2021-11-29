@@ -25,4 +25,6 @@ nm-applet &        # networkmanager applet/wifi,ethernet settings
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-zathura ~/.local/share/Magyarch-i3.pdf &
+#zathura ~/.local/share/Magyarch-i3.pdf &
+sleep 2s && notify-send 'Nyomja meg a Super+F1-et a használati utasításért.' -t 10000 &
+
