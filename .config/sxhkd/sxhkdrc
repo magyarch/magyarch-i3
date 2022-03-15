@@ -25,9 +25,9 @@ super + shift + e
 super + {_,shift + } i
     {column-layout, promote-i3 &}
 
-# Reload sxhkd
-super + Escape
-    pkill -USR1 -x sxhkd
+# Reload sxhkd + i3
+super + {_,shift + } Escape
+    {pkill -USR1 -x sxhkd, i3-msg reload}
 
 # Record and stream
 super + {KP_Home,KP_End}
@@ -81,17 +81,16 @@ super + F8
 super + {F9,F10}
     {dmenumount,dmenuumount}
 
-# Decrease volume -5
-F10
-    amixer set Master 5%-
-
-# Increase volume +5
-F11
-    amixer set Master 5%+
+# Decrease/increase volume +-5
+alt + {Up,Down}
+    {pamixer --allow-boost -i 5,pamixer --allow-boost -d 5}
 
 # Mute volume
 F12
    layout_manager.sh
+
+#################################################################################
+######################### i3 Bindings ##########################################
 
 # Close windows
 super + q
@@ -118,7 +117,7 @@ super + f
      i3-msg fullscreen
 
 # Split in horizontal/vertical orientation
-super + {b,v}
+super + {h,v}
     i3-msg split {h,v}
 
 # Change focus / move focused window
@@ -128,7 +127,6 @@ super + {_,shift +}{h,j,k,l}
 super + {_,shift +}{Left,Down,Up,Right}
   i3-msg {focus,move} {left,down,up,right}
 
-
  # Gaps increase
 super + a
   i3-msg gaps outer current plus 5
@@ -137,6 +135,4 @@ super + a
 super + shift + a
   i3-msg gaps outer current minus 5
 
-super + shift + b
-  i3-tabbed &
 
