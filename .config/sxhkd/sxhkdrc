@@ -23,7 +23,7 @@ super + shift + e
 
 # Show keybind in rofi,htop system monitor
 super + {_,shift + } i
-    {column-layout, promote-i3 &}
+    {column-layout, autotiling &}
 
 # Reload sxhkd + i3
 super + {_,shift + } Escape
@@ -39,7 +39,7 @@ super + shift + x
 
 # On/off transparency, pavucontrol
 alt + {a,b}
-   {pavucontrol,toggleprogram "picom -b"}
+   {pavucontrol,spotify}
 
 
 # Function keys #
@@ -83,7 +83,7 @@ super + {F9,F10}
 
 # Decrease/increase volume +-5
 alt + {Up,Down}
-    {pamixer --allow-boost -i 5,pamixer --allow-boost -d 5}
+    {pamixer --allow-boost -i 5 && pkill -RTMIN+1 i3blocks, pamixer --allow-boost -d 5 && pkill -RTMIN+1 i3blocks}
 
 # Mute volume
 F12
@@ -98,7 +98,7 @@ super + q
 
 # Quit,reboot,shutdown menu/i3; reload config
 super + {_,shift + } c
-     {rofi_run -l, i3-msg reload}
+     {rofi_run -l, toggleconky}
 
 # i3; restart i3 in-place (preserves layout/session)
 super + {_,shift + } r

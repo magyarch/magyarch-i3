@@ -23,6 +23,7 @@ border_bottom=1
 border_left=0
 
 
+
 [wifi]
 command=iwgetid -r | tr '\n' ' ' && grep $(iwgetid -m | awk '{ printf "%s", $1 }') /proc/net/wireless | awk '{ printf "%i%\n", int($3 * 100 / 70) }'
 instance=wlp11s0f3u1
@@ -49,8 +50,8 @@ border_left=0
 [arch_update]
 command=checkupdates | wc -l
 interval=once
-label=<span color="#1793d1"> </span>
-border=#1793d1
+label=<span color="#2e8b57"> </span>
+border=#2e8b57
 border_top=0
 border_right=0
 border_bottom=1
@@ -60,7 +61,17 @@ border_left=0
 [root]
 command=df -h / | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#f1fa8c\">GiB</span>\n", $4 }'
 interval=3
-label=<span color="#f1fa8c"> </span>
+label=<span color="#f1fa8c"> </span>
+border=#f1fa8c
+border_top=0
+border_right=0
+border_bottom=1
+border_left=0
+
+[games]
+command=df -h /mnt/Games | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#f1fa8c\">GiB</span>\n", $4 }'
+interval=3
+label=<span color="#f1fa8c"> </span>
 border=#f1fa8c
 border_top=0
 border_right=0
@@ -92,10 +103,43 @@ border_left=0
 
 
 [memory]
-command=free --giga | awk 'FNR==2{ printf "%i<span color=\"#ff79c6\">GiB</span>\n", $7 }'
+#command=free --giga | awk 'FNR==2{ printf "%i<span color=\"#ff79c6\">GiB</span>\n", $7 }'
+command=memory
 interval=2
-label=<span color="#ff79c6"> </span>
+label=<span color="#ff79c6"> </span>
 border=#ff79c6
+border_top=0
+border_right=0
+border_bottom=1
+border_left=0
+
+
+#[time_pst]
+#command=TZ=":Europe/Budapest" date '+%I : %M %Z' | awk '{ printf "%s<span color=\"#8be9fd\">%s</span>%s<span color=\"#8be9fd\"> %s</span>\n", $1, $2, $3, $4 }'
+#interval=1
+#label=<span color="#8be9fd"> </span>
+#border=#8be9fd
+#border_top=0
+#border_right=0
+#border_bottom=1
+#border_left=0
+
+[weather]
+command=weather
+interval=3600
+border=#bd93f9
+border_top=0
+border_right=0
+border_bottom=1
+border_left=0
+
+[date]
+#command=LC_ALL="hu_HU.UTF-8" date '+%Y %b %d (%a) %H:%M%p' | awk '{ printf "%s<span color=\"#2e8b57\">%s</span>%s<span color=\"#2e8b57\"> %s</span>\n", $1, $2, $3, $4 }'
+#color=\"#2e8b57\">%s %s</span>%s<span color=\"#2e8b57\"> %s </span>\n", $1, $3, $4, $5, $6 }'
+command=clock
+interval=60
+label=<span color="#1793d1"> </span>
+border=#1793d1
 border_top=0
 border_right=0
 border_bottom=1
@@ -105,33 +149,12 @@ border_left=0
 [volume]
 #command=pulseaudio-ctl full-status | awk '{ printf "%i<span color=\"#bd93f9\">%</span>\n", $1 }'
 command=volume
-interval=1
-label=<span color="#bd93f9"> </span>
+interval=once
+signal=1
+#label=<span color="#bd93f9"> </span>
 border=#bd93f9
 border_top=0
 border_right=0
 border_bottom=1
 border_left=0
 
-
-[time_pst]
-command=TZ=":Europe/Budapest" date '+%I : %M %Z' | awk '{ printf "%s<span color=\"#8be9fd\">%s</span>%s<span color=\"#8be9fd\"> %s</span>\n", $1, $2, $3, $4 }'
-interval=1
-label=<span color="#8be9fd"> </span>
-border=#8be9fd
-border_top=0
-border_right=0
-border_bottom=1
-border_left=0
-
-
-[date]
-command=LC_ALL="hu_HU.UTF-8" date '+%Y 年 %b %d 日 %A。' | awk '{ printf "%s<span color=\"#2e8b57\">%s</span>%s<span color=\"#2e8b57\"> %s</span>\n", $1, $2, $3, $4 }'
-#color=\"#2e8b57\">%s %s</span>%s<span color=\"#2e8b57\"> %s </span>\n", $1, $3, $4, $5, $6 }'
-interval=60
-label=<span color="#2e8b57"> </span>
-border=#2e8b57
-border_top=0
-border_right=0
-border_bottom=1
-border_left=0
