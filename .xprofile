@@ -2,9 +2,9 @@
 
 # This file runs when a DM logs you into a graphical session.
 
-xrandr --dpi 156
+#xrandr --dpi 156
 
-export GDK_SCALE=2
+#export GDK_SCALE=2
 
 picom --config ~/.config/picom.conf &
 
@@ -37,4 +37,4 @@ xset s off -dpms &
 
 conky -c ~/.config/conky/magyarch.conkyrc &
 
-redshift -l 47.162495:19.503304 -t 6000:3600 -g 0.8 -m randr -v &
+#redshift -l 47.162495:19.503304 -t 6000:3600 -g 0.8 -m randr -v &
