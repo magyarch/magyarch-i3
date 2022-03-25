@@ -39,7 +39,7 @@ super + shift + x
 
 # On/off transparency, pavucontrol
 alt + {a,b}
-   {pavucontrol,spotify}
+   {pavucontrol,spotify --force-device-scale-factor=2}
 
 
 # Function keys #
@@ -109,12 +109,8 @@ super + {_,shift + } space
      {i3-msg focus mode_toggle, i3-msg floating toggle}
 
 # Change container layout (stacked, tabbed, fullscreen toggle split)
-super + {s,t,e}
-     i3-msg layout {stacked, tabbed, toggle split}
-
-# Fullscreen toggle
-super + f
-     i3-msg fullscreen
+super + {s,t,f,e}
+     i3-msg layout {stacked, tabbed, fullscreen toggle, toggle split}
 
 # Split in horizontal/vertical orientation
 super + {h,v}

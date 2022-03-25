@@ -47,6 +47,17 @@ border_bottom=1
 border_left=0
 
 
+[aur-update]
+command=paru -Qum | checkupdates | wc -l
+interval=once
+label=<span color="#bd93f9"> </span>
+border=#2e8b57
+border_top=0
+border_right=0
+border_bottom=1
+border_left=0
+
+
 [arch_update]
 command=checkupdates | wc -l
 interval=once

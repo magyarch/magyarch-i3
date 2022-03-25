@@ -8,10 +8,12 @@
 declare options=("alias
 bash
 i3config
-profile
-vifm
 i3blocks
+profile
+sxhkd
+vifm
 xresources
+xprofile
 quit")
 
 choice=$(echo -e "${options[@]}" | rofi -dmenu -i -no-custom -p 'Edit a config file: ')
@@ -32,6 +34,9 @@ case "$choice" in
 	profile)
 		choice="$HOME/.profile"
 	;;
+	sxhkd)
+	        choice="$HOME/.config/sxhkd/sxhkdrc"
+	;;
 	vifm)
 		choice="$HOME/.config/vifm/vifmrc"
 	;;
@@ -41,8 +46,11 @@ case "$choice" in
 	xresources)
 		choice="$HOME/.Xresources"
 	;;
+        xprofile)
+		choice="$HOME/.xprofile"
+	;;
 	*)
 		exit 1
 	;;
 esac
-subl -c "$choice"
+geany  "$choice"
