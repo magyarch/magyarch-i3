@@ -47,19 +47,8 @@ border_bottom=1
 border_left=0
 
 
-[aur-update]
-command=paru -Qum | checkupdates | wc -l
-interval=once
-label=<span color="#bd93f9"> </span>
-border=#2e8b57
-border_top=0
-border_right=0
-border_bottom=1
-border_left=0
-
-
-[arch_update]
-command=checkupdates | wc -l
+[all-update]
+command=paru -Qu | wc -l
 interval=once
 label=<span color="#2e8b57"> </span>
 border=#2e8b57
@@ -80,10 +69,30 @@ border_bottom=1
 border_left=0
 
 [games]
-command=df -h /mnt/Games | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#f1fa8c\">GiB</span>\n", $4 }'
+command=df -h /run/media/xeoncpu/Games | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#f1fa8c\">GiB</span>\n", $4 }'
 interval=3
 label=<span color="#f1fa8c"> </span>
 border=#f1fa8c
+border_top=0
+border_right=0
+border_bottom=1
+border_left=0
+
+[nmve_stats]
+command=sensors | sed -rn 's/.*Composite:\s+([^ ]+).*/\1/p'
+label=<span color="#c3cdc8"><b>NVME1: </b></span>
+interval=2
+border=#c3cdc8
+border_top=0
+border_right=0
+border_bottom=1
+border_left=0
+
+[nmve2_stats]
+command=sensors | awk 'FNR == 20 {print $2}'
+label=<span color="#5b18f0"><b>NVME2: </b></span>
+interval=2
+border=#5b18f0
 border_top=0
 border_right=0
 border_bottom=1
@@ -161,7 +170,7 @@ border_left=0
 #command=pulseaudio-ctl full-status | awk '{ printf "%i<span color=\"#bd93f9\">%</span>\n", $1 }'
 command=volume
 interval=once
-signal=1
+signal=10
 #label=<span color="#bd93f9"> </span>
 border=#bd93f9
 border_top=0

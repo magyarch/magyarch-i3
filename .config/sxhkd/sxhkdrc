@@ -83,7 +83,7 @@ super + {F9,F10}
 
 # Decrease/increase volume +-5
 alt + {Up,Down}
-    {pamixer --allow-boost -i 5 && pkill -RTMIN+1 i3blocks, pamixer --allow-boost -d 5 && pkill -RTMIN+1 i3blocks}
+    {pamixer --allow-boost -i 5 && pkill -RTMIN+10 i3blocks, pamixer --allow-boost -d 5 && pkill -RTMIN+10 i3blocks}
 
 # Mute volume
 F12
@@ -109,8 +109,11 @@ super + {_,shift + } space
      {i3-msg focus mode_toggle, i3-msg floating toggle}
 
 # Change container layout (stacked, tabbed, fullscreen toggle split)
-super + {s,t,f,e}
-     i3-msg layout {stacked, tabbed, fullscreen toggle, toggle split}
+super + {s,t,e}
+     i3-msg layout {stacked, tabbed, toggle split}
+
+super + f
+     i3-msg fullscreen toggle
 
 # Split in horizontal/vertical orientation
 super + {h,v}
