@@ -6,7 +6,8 @@
 
 #export GDK_SCALE=2
 
-picom --config ~/.config/picom.conf &
+#picom --config ~/.config/picom.conf &
+picom -b --config ~/.config/picom.conf --experimental-backends &
 
 sxhkd &     # Simple X hotkey daemon for setting up keybinds
 
