@@ -7,7 +7,7 @@ super + {_,shift + } Return
 
 # Dmenu2 and rofi(window switcher, application launcher)
 super + {_,shift +} d
-    {dmenu_run -nb '#1a1a1a' -nf '#c3cdc8' -sb '#2e8b57' -fn 'JetBrains Mono Nerd Font-12' -p 'Search', rofi_run -r}
+    {dmenu_run -i -c -g 1 -l 10 -nb '#1a1a1a' -nf '#c3cdc8' -sb '#2e8b57' -fn 'JetBrains Mono Nerd Font-12' -p 'Search', rofi_run -r}
 
 # Chat client, gui filemanager
 super + {_,shift + } p
@@ -23,7 +23,7 @@ super + shift + e
 
 # Show keybind in rofi,htop system monitor
 super + {_,shift + } i
-    {column-layout, autotiling &}
+    {picsound, autotiling &}
 
 # Reload sxhkd + i3
 super + {_,shift + } Escape
