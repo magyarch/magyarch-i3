@@ -108,7 +108,7 @@ alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
 alias yta-opus="youtube-dl --extract-audio --audio-format opus "
 alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
 alias yta-wav="youtube-dl --extract-audio --audio-format wav "
-
+alias ytflac='youtube-dl -x --audio-format flac --audio-quality 0 -o "~/Zenék/%(uploader)s/%(title)s.%(ext)s"'
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 #Recent Installed Packages
