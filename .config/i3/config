@@ -196,7 +196,7 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #1a1a1a
 
 bar {
-     output $monitor1
+#     output $monitor1
      font pango: JetBrains Mono Nerd Font 10
      status_command i3blocks
      strip_workspace_numbers yes
