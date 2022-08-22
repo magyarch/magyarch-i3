@@ -68,15 +68,15 @@ border_right=0
 border_bottom=1
 border_left=0
 
-[games]
-command=df -h /run/media/xeoncpu/Games | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#f1fa8c\">GiB</span>\n", $4 }'
-interval=3
-label=<span color="#f1fa8c"> </span>
-border=#f1fa8c
-border_top=0
-border_right=0
-border_bottom=1
-border_left=0
+#[games]
+#command=df -h | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#f1fa8c\">GiB</span>\n", $4 }'
+#interval=3
+#label=<span color="#f1fa8c"> </span>
+#border=#f1fa8c
+#border_top=0
+#border_right=0
+#border_bottom=1
+#border_left=0
 
 [nmve_stats]
 command=sensors | sed -rn 's/.*Composite:\s+([^ ]+).*/\1/p'
