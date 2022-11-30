@@ -171,6 +171,39 @@ bindsym $mod+shift+n [instance="music"] scratchpad show, move position center
 exec --no-startup-id alacritty --class music -e ncmpcpp &
 
 
+# for my 4k resolution
+#for_window [class="Pinentry"] sticky enable
+#for_window [class="sent"] border pixel 0px
+#for_window [title="GIMP Startup"] move workspace $ws5
+#for_window [class="Gimp"] move workspace $ws5
+#for_window [title="^QEMU$"] floating enable
+#for_window [window_role="GtkFileChooserDialog"] resize set 1880 1020
+#for_window [window_role="GtkFileChooserDialog"] move position center
+#for_window [title="Default - Wine desktop"] floating enable
+#for_window [class="(?i)Pavucontrol|mupdf|sxiv|feh"] floating enable, resize set 1880 1020, move position center, focus
+#for_window [class="(?i)mpv"] floating enable, resize set 1880 1020, move position center, focus
+#for_window [class="Zathura"] floating enable, resize set 1880 1020, move position center, focus
+#for_window [class="Lxappearance"] floating enable, resize set 1880 1020, move position center, focus
+
+
+#for_window [title="float"] floating enable, resize set 1880 1020, move position center, focus
+#for_window [title="floating"] floating enable, resize set 1880 1020, move position center, focus
+
+#for_window [window_role="pop-up"] floating enable
+#for_window [window_role="task_dialog"] floating enable
+
+
+# Dropterm with alacritty (mod+n hide/show) #########################################
+
+#for_window [instance="dropdown"] floating enable, resize set 1880 1020, move scratchpad
+#bindsym $mod+n [instance="dropdown"] scratchpad show, move position center
+#exec --no-startup-id alacritty --class dropdown &
+
+#for_window [instance="music"] floating enable, resize set 1880 1020, move scratchpad
+#bindsym $mod+shift+n [instance="music"] scratchpad show, move position center
+#exec --no-startup-id alacritty --class music -e ncmpcpp &
+
+
 # Assign application to workspace ####################################################
 
 for_window [class="$BROWSER|Brave-browser|Firefox|firefox"] move to workspace $ws1 focus
@@ -200,8 +233,8 @@ bar {
      font pango: JetBrains Mono Nerd Font 10
      status_command i3blocks
      strip_workspace_numbers yes
-    # status_command ~/.local/bin/bumblebee-status/bumblebee-status -m mpd:{artist} sensors cpu memory date time weather layout amixer -p interval=2.5 -p amixer.left-click="pavucontrol" \
-     #-t firefox-dark-powerline
+    # status_command ~/.local/bin/bumblebee-status/bumblebee-status -m kernel sensors dunstctl disk nvidiagpu memory date time weather layout pasink -p sensors.show_freq -p sensors.match_number=0 -p interval=0.5 -p pasink.left-click="pavucontrol" \
+     -t firefox-dark-powerline 
      position top
 
 
