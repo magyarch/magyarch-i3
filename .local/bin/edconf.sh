@@ -16,7 +16,7 @@ xresources
 xprofile
 quit")
 
-choice=$(echo -e "${options[@]}" | dmenu -i -c -g 1 -l 10 -nb '#000000' -sb '#947cc3' -fn 'JetBrains Mono Medium-12' -p 'Edit config files: ')
+choice=$(echo -e "${options[@]}" | dmenu -i -c -g 1 -l 10 -nb '#282a36' -sb '#947cc3' -fn 'JetBrains Mono Medium-12' -p 'Edit config files: ')
 
 case "$choice" in
 	quit)

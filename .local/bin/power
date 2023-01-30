@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIALOG_RESULT=$(echo -e 'Quit i3\nHibernate\nReboot\nPoweroff' | dmenu -i -c -g 1 -l 10 -nb '#000000' -sb '#947cc3' -fn 'JetBrains Mono Medium-12' -p "SYSTEM" )
+DIALOG_RESULT=$(echo -e 'Quit i3\nHibernate\nReboot\nPoweroff' | dmenu -i -c -g 1 -l 10 -nb '#282a36' -sb '#947cc3' -fn 'JetBrains Mono Medium-12' -p "SYSTEM" )
 
 case $DIALOG_RESULT in
         "Quit i3" ) fancy-quit ;;

@@ -10,6 +10,7 @@ set $mod Mod4
 # Basic definition #######################################################################
 
 for_window [class="^.*"] border pixel 3
+for_window [class="^"] split toggle
 
 
 
@@ -39,7 +40,7 @@ font pango:JetBrains Mono Nerd Font 10
 # exec --no-startup-id xrandr --output HDMI-0 --scale 2x2 --mode 1920x1080 --rotate left --output $monitor1 --primary --mode 3840x2160 --left-of HDMI-0
 
 
-default_orientation horizontal
+default_orientation vertical
 
 
 # Workspaces ######################################################
@@ -139,22 +140,55 @@ bindsym $mod+z mode "resize"
 
 # Floating enable #####################################################################
 
+#for_window [class="Pinentry"] sticky enable
+#for_window [class="sent"] border pixel 0px
+#for_window [title="GIMP Startup"] move workspace $ws5
+#for_window [class="Gimp"] move workspace $ws5
+#for_window [title="^QEMU$"] floating enable
+#for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+#for_window [window_role="GtkFileChooserDialog"] move position center
+#for_window [title="Default - Wine desktop"] floating enable
+#for_window [class="(?i)Pavucontrol|mupdf|sxiv|feh"] floating enable, resize set 1280 600, move position center, focus
+#for_window [class="(?i)mpv"] floating enable, resize set 1280 620, move position center, focus
+#for_window [class="Zathura"] floating enable, resize set 1280 620, move position center, focus
+#for_window [class="Lxappearance"] floating enable, resize set 1280 620, move position center, focus
+
+
+#for_window [title="float"] floating enable, resize set 800 600, move position center, focus
+#for_window [title="floating"] floating enable, resize set 1280 620, move position center, focus
+
+#for_window [window_role="pop-up"] floating enable
+#for_window [window_role="task_dialog"] floating enable
+
+
+## Dropterm with alacritty (mod+n hide/show) #########################################
+
+#for_window [instance="dropdown"] floating enable, resize set 1280 620, move scratchpad
+#bindsym $mod+n [instance="dropdown"] scratchpad show, move position center
+#exec --no-startup-id alacritty --class dropdown &
+
+#for_window [instance="music"] floating enable, resize set 1280 620, move scratchpad
+#bindsym $mod+shift+n [instance="music"] scratchpad show, move position center
+#exec --no-startup-id alacritty --class music -e ncmpcpp &
+
+
+# for my 4k resolution
 for_window [class="Pinentry"] sticky enable
 for_window [class="sent"] border pixel 0px
 for_window [title="GIMP Startup"] move workspace $ws5
 for_window [class="Gimp"] move workspace $ws5
 for_window [title="^QEMU$"] floating enable
-for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+for_window [window_role="GtkFileChooserDialog"] resize set 1880 1020
 for_window [window_role="GtkFileChooserDialog"] move position center
 for_window [title="Default - Wine desktop"] floating enable
-for_window [class="(?i)Pavucontrol|mupdf|sxiv|feh"] floating enable, resize set 1280 600, move position center, focus
-for_window [class="(?i)mpv"] floating enable, resize set 1280 620, move position center, focus
-for_window [class="Zathura"] floating enable, resize set 1280 620, move position center, focus
-for_window [class="Lxappearance"] floating enable, resize set 1280 620, move position center, focus
+for_window [class="(?i)Pavucontrol|mupdf|sxiv|feh"] floating enable, resize set 1880 1020, move position center, focus
+for_window [class="(?i)mpv"] floating enable, resize set 1880 1020, move position center, focus
+for_window [class="Zathura"] floating enable, resize set 1880 1020, move position center, focus
+for_window [class="Lxappearance"] floating enable, resize set 1880 1020, move position center, focus
 
 
-for_window [title="float"] floating enable, resize set 800 600, move position center, focus
-for_window [title="floating"] floating enable, resize set 1280 620, move position center, focus
+for_window [title="float"] floating enable, resize set 1880 1020, move position center, focus
+for_window [title="floating"] floating enable, resize set 1880 1020, move position center, focus
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -162,46 +196,13 @@ for_window [window_role="task_dialog"] floating enable
 
 # Dropterm with alacritty (mod+n hide/show) #########################################
 
-for_window [instance="dropdown"] floating enable, resize set 1280 620, move scratchpad
-bindsym $mod+n [instance="dropdown"] scratchpad show, move position center
+for_window [instance="dropdown"] floating enable, resize set 1880 1020, move scratchpad
+bindsym $mod+shift+Return [instance="dropdown"] scratchpad show, move position center
 exec --no-startup-id alacritty --class dropdown &
 
-for_window [instance="music"] floating enable, resize set 1280 620, move scratchpad
+for_window [instance="music"] floating enable, resize set 1880 1020, move scratchpad
 bindsym $mod+shift+n [instance="music"] scratchpad show, move position center
 exec --no-startup-id alacritty --class music -e ncmpcpp &
-
-
-# for my 4k resolution
-#for_window [class="Pinentry"] sticky enable
-#for_window [class="sent"] border pixel 0px
-#for_window [title="GIMP Startup"] move workspace $ws5
-#for_window [class="Gimp"] move workspace $ws5
-#for_window [title="^QEMU$"] floating enable
-#for_window [window_role="GtkFileChooserDialog"] resize set 1880 1020
-#for_window [window_role="GtkFileChooserDialog"] move position center
-#for_window [title="Default - Wine desktop"] floating enable
-#for_window [class="(?i)Pavucontrol|mupdf|sxiv|feh"] floating enable, resize set 1880 1020, move position center, focus
-#for_window [class="(?i)mpv"] floating enable, resize set 1880 1020, move position center, focus
-#for_window [class="Zathura"] floating enable, resize set 1880 1020, move position center, focus
-#for_window [class="Lxappearance"] floating enable, resize set 1880 1020, move position center, focus
-
-
-#for_window [title="float"] floating enable, resize set 1880 1020, move position center, focus
-#for_window [title="floating"] floating enable, resize set 1880 1020, move position center, focus
-
-#for_window [window_role="pop-up"] floating enable
-#for_window [window_role="task_dialog"] floating enable
-
-
-# Dropterm with alacritty (mod+n hide/show) #########################################
-
-#for_window [instance="dropdown"] floating enable, resize set 1880 1020, move scratchpad
-#bindsym $mod+n [instance="dropdown"] scratchpad show, move position center
-#exec --no-startup-id alacritty --class dropdown &
-
-#for_window [instance="music"] floating enable, resize set 1880 1020, move scratchpad
-#bindsym $mod+shift+n [instance="music"] scratchpad show, move position center
-#exec --no-startup-id alacritty --class music -e ncmpcpp &
 
 
 # Assign application to workspace ####################################################
@@ -226,21 +227,21 @@ client.unfocused        #333333 #222222 #888888 #292D2E   #222222
 client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
-client.background       #1a1a1a
+client.background       #282a36
 
 bar {
 #     output $monitor1
-     font pango: JetBrains Mono Nerd Font 10
-     status_command i3blocks
+     font pango: JetBrains Mono Nerd Font 9
+     #status_command i3blocks
      strip_workspace_numbers yes
-    # status_command ~/.local/bin/bumblebee-status/bumblebee-status -m kernel sensors dunstctl disk nvidiagpu memory date time weather layout pasink -p sensors.show_freq -p sensors.match_number=0 -p interval=0.5 -p pasink.left-click="pavucontrol" \
-   #  -t firefox-dark-powerline 
+     status_command ~/.local/bin/bumblebee-status/bumblebee-status -m sensors disk nvidiagpu memory date time pasink -p sensors.show_freq  sensors.match_number=0  interval=0.5  pasink.left-click="pavucontrol" \
+     -t firefox-dark-powerline 
      position top
 
 
 
   colors {
-    background #1a1a1a
+    background #282a36
     statusline #C3CDC8
     separator  #C3CDC8
 
