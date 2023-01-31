@@ -107,7 +107,7 @@ bindsym $mod+Shift+odiaeresis move container to workspace number $ws10
 bindsym $mod+Shift+m move workspace to output right
 
 # Focus between output
-bindsym $mod+Tab focus output left
+#bindsym $mod+Tab focus output left
 
 
 # resize window (you can also use the mouse for that)
@@ -234,7 +234,7 @@ bar {
      font pango: JetBrains Mono Nerd Font 9
      #status_command i3blocks
      strip_workspace_numbers yes
-     status_command ~/.local/bin/bumblebee-status/bumblebee-status -m sensors disk nvidiagpu memory date time pasink -p sensors.show_freq  sensors.match_number=0  interval=0.5  pasink.left-click="pavucontrol" \
+     status_command ~/.local/bin/bumblebee-status/bumblebee-status -m spacer sensors disk nvidiagpu memory date time pasink -p sensors.show_freq  sensors.match_number=0  interval=0.5 spacer.left-click="wal" disk.left-click="gnome-disks"  date.left-click="eww open --toggle calendar" pasink.left-click="pavucontrol" \
      -t firefox-dark-powerline 
      position top
 
