@@ -2,8 +2,8 @@
 #########################################
 
 # Terminal emulator
-super + Return
-     alacritty
+super + {_,shift +} Return
+     {$TERMINAL, scratch scratchpad}
 
 # Dmenu2 and rofi(window switcher, application launcher)
 super + {_,shift +} d
@@ -22,8 +22,8 @@ super + shift + e
     subl
 
 # Show keybind in rofi,htop system monitor
-super + {_,shift + } i
-    {picsound, autotiling &}
+super + {_,shift + } n
+    {scratch Music, scratch News}
 
 # Reload sxhkd + i3
 super + {_,shift + } Escape
