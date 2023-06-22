@@ -96,6 +96,9 @@ F12
 super + q
     i3-msg kill
 
+super + Tab
+    i3-msg focus mode_toggle
+
 # Quit,reboot,shutdown menu/i3; reload config
 super + {_,shift + } c
      {power, eww open --toggle powermenu}
@@ -106,7 +109,7 @@ super + {_,shift + } r
 
 # Change focus between tiling and floating and toggle floating windows
 super + {_,shift + } space
-     {i3-msg focus mode_toggle, i3-msg floating toggle}
+     {i3-msg layout toggle, i3-msg floating toggle}
 
 # Change container layout (stacked, tabbed, fullscreen toggle split)
 super + {s,t,e}
